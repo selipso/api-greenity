@@ -1,4 +1,4 @@
 docker-compose.yml
-./frontend/app/node_modules
-./frontend/node_modules
+./frontend/app/node_modules/**/*
+./frontend/node_modules/**/*
 ./db/*.sql
