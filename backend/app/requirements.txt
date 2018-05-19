@@ -1,2 +1,2 @@
-falcon==1.4.1
 sqlalchemy==1.2
+psycopg2==2.7

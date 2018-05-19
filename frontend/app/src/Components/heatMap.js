@@ -37,14 +37,6 @@ export default class Heatmap extends Component {
 
   componentWillMount() {
     // make API request to get data here
-    axios.get('http://localhost:80/').then(
-      (response) => {
-        console.log('====================================');
-        console.log('Response from localhost:80');
-        console.log('====================================');
-        console.log('Status code: ' + response.status);
-      }
-    );
 
     axios.get('http://localhost:5000/').then(
       (response) => {
@@ -53,16 +45,12 @@ export default class Heatmap extends Component {
         console.log('====================================');
         console.log('Status code: ' + response.status);
       }
-    );
-
-    axios.get('http://api:80/').then(
-      (response) => {
-        console.log('====================================');
-        console.log('Response from api:80');
-        console.log('====================================');
-        console.log('Status code: ' + response.status);
-      }
-    )
+    ).catch(function (error) {
+      console.log('====================================');
+      console.log('Failed localhost:5000');
+      console.log('====================================');
+      console.log(error);
+    });
   }
 
   updateData(newBounds, newCenter) {
@@ -70,7 +58,7 @@ export default class Heatmap extends Component {
     const NELng = newBounds.getNorthEast().lng();
     const SWLat = newBounds.getSouthWest().lat();
     const SWLng = newBounds.getSouthWest().lng();
-    const url = `https://1yhfgkdznb.execute-api.us-west-2.amazonaws.com/dev/map_data?ne_lat=${NELat}&ne_lng=${NELng}&sw_lat=${SWLat}&sw_lng=${SWLng}`;
+    const url = `http://localhost:5000/?ne_lat=${NELat}&ne_lng=${NELng}&sw_lat=${SWLat}&sw_lng=${SWLng}`;
 
     // Following block of code will pass new data to heatmap
     // this.setState({

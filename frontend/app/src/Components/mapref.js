@@ -51,7 +51,7 @@ class SearchContainer extends Component {
 
 const MyMapComponent = compose(
   withProps({
-    googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAnWosRCKLdYTOWPwSjf-NjJuSehxvE_YY&libraries=geometry,drawing,places",
+    googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyADW7PmEhk1o532MpuY-h7nJz0dc8rg_Ys&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `400px` }} />,
     mapElement: <div style={{ height: `100%` }} />
